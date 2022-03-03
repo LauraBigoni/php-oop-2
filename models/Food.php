@@ -9,14 +9,14 @@ class Food extends Product
     public function __construct($name, $price, $description, $details, $valutation, $ingredients, $disposability)
     {
         parent::__construct($name, $price, $description, $details, $valutation, $disposability);
-        $this->ingredients = $ingredients;
+        $this->ingredients = $this->getIngredients($ingredients);
     }
 
-    public function getIngredients()
+    private function getIngredients($ingredient)
     {
-        if (empty($this->ingredients)) {
-            return 'Nessuna informazione disponibile per questo prodotto.';
-        };
-        return 'Lista ingredienti: ' . $this->ingredients;
+        if ($ingredient  === '') {
+            return 'Nessuna informazione disponibile per questo prodotto';
+        }
+        return 'Lista ingredienti: ' . $ingredient;
     }
 }

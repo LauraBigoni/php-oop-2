@@ -21,6 +21,7 @@ var_dump($osso);
 $salviette = new Material('Salviette Dito Monouso Pulizia Denti', 8.9, 'Salviettine da dito monouso per la pulizia dei denti del cane, gatto o altri piccoli animali, confezione da 50pz', 'Salviettine da dito monouso per la pulizia dei denti del cane, gatto o altri piccoli animali con lozione detergente e nutriente, con menta. Questo prodotto è una valida alternativa allo spazzolino da denti e al dentifricio per animali domestici. Puoi usarlo semplicemente indossandolo e con il dito indice e il pollice potrai pulire i denti del tuo amato peloso. Confezione da 50 pezzi.', 3, 'Detergente, ' . 'Menta, ' . 'Naturale', true);
 
 var_dump($salviette);
+
 ?>
 
 <!DOCTYPE html>
