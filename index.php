@@ -2,6 +2,7 @@
 require_once __DIR__ . '/models/Product.php';
 require_once __DIR__ . '/models/Material.php';
 require_once __DIR__ . '/models/Food.php';
+require __DIR__ . '/models/User.php';
 
 $scatolette = new Food('Stuzzy Dog Monoproteico Pollo', 1.80, 'Stuzzy Monoproteico al Pollo, cibo umido per cani soggetti ad intolleranze alimentari.', 'Stuzzy Monoproteico al Pollo è un patè per cani con alta percentuale di materie prime, con pezzi selezionati. La ricetta monoproteica, grain free e gluten free, è caratterizzata da un\'elevata digeribilità, priva di coloranti e conservanti aggiunti, adatta ai cani cui è stato prescritto un regime alimentare ad eliminazione. La formulazione di Stuzzy Monoproteico al Pollo è stata approvata nutrizionalmente dal Dipartimento di Scienze Mediche Veterinarie dell’Alma Mater Studiorum Università di Bologna.', 5, 'Pollo fresco, ' . 'Brodo di pollo, ' . 'Sostanze minerali, ' . 'Vitamine', true);
 

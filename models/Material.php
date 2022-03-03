@@ -19,4 +19,3 @@ class Material extends Product
         return 'Lista materiali: ' . $material;
     }
 }
-

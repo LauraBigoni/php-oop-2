@@ -1,5 +1,4 @@
 <?php
-
 class Product
 {
     public $name;
@@ -8,9 +7,8 @@ class Product
     public $details;
     public $valutation;
     public $disposability;
-    public $discount;
 
-    public function __construct($name, $price, $description, $details, $valutation, $disposability, $discount = 0)
+    public function __construct($name, $price, $description, $details, $valutation, $disposability)
     {
         $this->name = $name;
         $this->price = $price;
@@ -18,7 +16,5 @@ class Product
         $this->details = $details;
         $this->valutation = $valutation;
         $this->disposability = $disposability;
-        $this->discount = $discount;
     }
-    
 }
