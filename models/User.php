@@ -1,5 +1,4 @@
 <?php
-require_once __DIR__ . '/Product.php';
 
 // iscritto o non iscritto e sconto iscritto
 class User
@@ -9,7 +8,25 @@ class User
 
     public function __construct($discount, $registered)
     {
+        $this->discount = $this->setDiscount($discount);
+        $this->registered = $this->setRegistered($registered);
+    }
+
+    public function getDiscount()
+    {
+        return $this->discount;
+    }
+    public function getRegistered()
+    {
+        return $this->registered;
+    }
+    public function setDiscount($discount)
+    {
         $this->discount = $discount;
-        $this->registered = $registered;
+    }
+    public function setRegistered($r)
+    {
+        if ($r === true) return true;
+        return false;
     }
 }

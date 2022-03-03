@@ -51,7 +51,7 @@ class Product
     public function setDisposability($disp)
     {
         if ($disp === false) {
-            return 'Prodotto attualmente non disponibile';
+            return 'Prodotto attualmente non disponibile.';
         }
         return 'Disponibile in magazzino.';
     }

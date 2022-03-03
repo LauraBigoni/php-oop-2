@@ -23,6 +23,10 @@ $salviette = new Material('Salviette Dito Monouso Pulizia Denti', 8.9, 'Salviett
 
 var_dump($salviette);
 
+$utente1 = new User(1, false);
+$utente2 = new User(2, true);
+var_dump($utente1);
+var_dump($utente2);
 ?>
 
 <!DOCTYPE html>
