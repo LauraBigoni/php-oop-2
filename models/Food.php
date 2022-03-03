@@ -11,4 +11,12 @@ class Food extends Product
         parent::__construct($name, $price, $description, $details, $valutation, $disposability);
         $this->ingredients = $ingredients;
     }
+
+    public function getIngredients()
+    {
+        if (empty($this->ingredients)) {
+            return 'Nessuna informazione disponibile per questo prodotto.';
+        };
+        return 'Lista ingredienti: ' . $this->ingredients;
+    }
 }

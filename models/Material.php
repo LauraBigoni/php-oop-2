@@ -10,4 +10,13 @@ class Material extends Product
         parent::__construct($name, $price, $description, $details, $valutation, $disposability);
         $this->materials = $materials;
     }
+
+    public function getMaterials()
+    {
+        if ($this->materials === null) {
+            return $this->materials = 'Nessuna informazione disponibile per questo prodotto';
+        }
+        return 'Lista materiali: ' . $this->materials;
+    }
 }
+var_dump($materials);

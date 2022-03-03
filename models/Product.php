@@ -18,8 +18,5 @@ class Product
         $this->valutation = $valutation;
         $this->disposability = $disposability;
     }
-    public function __toString()
-    {
-        return $this->name . $this->price . $this->description . $this->details . $this->valutation . $this->disposability;
-    }
+    
 }
