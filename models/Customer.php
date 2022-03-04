@@ -14,7 +14,7 @@ class Customer
         $this->name = $name;
         $this->last_name = $last_name;
         $this->age = $age;
-        $this->credit_card = $credit_card;
+        $this->setCreditCard($credit_card);
         $this->is_registered = $is_registered;
         $this->discount = $this->setDiscount();
     }
@@ -33,5 +33,39 @@ class Customer
     {
         if (!$credit_card instanceof CreditCard) return false;
         $this->credit_card = $credit_card;
+    }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function getLastName()
+    {
+        return $this->last_name;
+    }
+
+    public function getAge()
+    {
+        return $this->age;
+    }
+
+    public function getCreditCard()
+    {
+        return $this->credit_card;
+    }
+
+    public function getIsRegistered()
+    {
+        return $this->is_registered;
+    }
+
+
+    public function buyProduct()
+    {
+        if ($this->credit_card->expire < date('Y')) {
+            return 'Carta di credito scaduta';
+        }
+        return 'Transazione approvata';
     }
 }
