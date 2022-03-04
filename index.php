@@ -17,11 +17,13 @@ var_dump($cuccia);
 var_dump($osso);
 var_dump($salviette);
 
-$mio_conto = new Customer('Laura', 'Bigoni', 22, 'carta di credito', true);
-$mia_carta = new CreditCard(47246193294648, false);
-var_dump($mia_carta);
-var_dump($mio_conto);
+$customer = new Customer('Laura', 'Bigoni', 22, 'carta di credito', true);
+$card = new CreditCard(47246193294648, false);
+var_dump($card);
+var_dump($customer);
 
+var_dump($cuccia->getMaterials());
+echo $customer->getDiscount();
 ?>
 
 <!DOCTYPE html>
