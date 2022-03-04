@@ -34,7 +34,7 @@ class CreditCard
     }
     public function getBalance()
     {
-        return $this->balance;
+        return $this->credit_card->balance . '€';
     }
     public function setBalance($balance): self
     {

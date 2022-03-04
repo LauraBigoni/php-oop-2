@@ -59,8 +59,10 @@ class Customer
     {
         return $this->is_registered;
     }
-
-
+    public function getBalance()
+    {
+        return $this->credit_card->balance . '€';
+    }
     public function buyProduct($product)
     {
         if ($this->credit_card->expire < date('Y')) {

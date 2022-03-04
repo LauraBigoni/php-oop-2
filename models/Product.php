@@ -13,6 +13,13 @@ class Product
         $this->description = $description;
         $this->disposability = $disposability;
     }
+    public function __toString()
+    {
+        return $this->name;
+        return $this->price;
+        return $this->description;
+        return $this->disposability;
+    }
     public function setDisposability($disp)
     {
         if ($disp === false) {

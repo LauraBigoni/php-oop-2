@@ -21,13 +21,16 @@ $salviette = new Material('Salviette Dito Monouso Pulizia Denti', 8.9, 'Salviett
 // var_dump($scatolette->getPrice());
 
 $card = new CreditCard(47246193294648, 2022, 100);
+$new_credit_card = new CreditCard(938464910, 2021, 0);
 $customer = new Customer('Laura', 'Bigoni', 22, $card, true);
+$new_customer = new Customer('Piero', 'Pierino', 52, $new_credit_card, false);
+
 // var_dump($customer->getDiscount());
-
-
-var_dump($customer);
-var_dump($card);
-var_dump($customer->buyProduct($cuccia));
+// var_dump($customer);
+// var_dump($card);
+// var_dump($customer->buyProduct($cuccia));
+// var_dump($new_customer->buyProduct($osso));
+// var_dump($card);
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +44,11 @@ var_dump($customer->buyProduct($cuccia));
 </head>
 
 <body>
-
+    <h1>Ciao, <?php echo $customer->getName(); ?></h1>
+    <p>Hai <?php echo $customer->getBalance(); ?> nel tuo conto</p>
+    <p>Hai appena comprato: '<?php echo $cuccia->name; ?>'</p>
+    <p><?php echo $customer->buyProduct($cuccia) ?></p>
+    <p>Saldo rimanente nel tuo conto: <?php echo $customer->getBalance(); ?></p>
 </body>
 
 </html>
