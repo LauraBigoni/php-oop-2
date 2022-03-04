@@ -12,22 +12,22 @@ $osso = new Material('Osso Natural Prosciutto Goodbite', 5.9, 'L\'Osso creato ap
 
 $salviette = new Material('Salviette Dito Monouso Pulizia Denti', 8.9, 'Salviettine da dito monouso per la pulizia dei denti del cane, gatto o altri piccoli animali, confezione da 50pz', 'Detergente, ' . 'Menta, ' . 'Naturale', true);
 
-var_dump($scatolette);
-var_dump($cuccia);
-var_dump($osso);
-var_dump($salviette);
+// var_dump($scatolette);
+// var_dump($cuccia);
+// var_dump($osso);
+// var_dump($salviette);
+// var_dump($cuccia->getMaterials());
+// var_dump($scatolette->getDescription());
+// var_dump($scatolette->getPrice());
 
-$card = new CreditCard(47246193294648, true);
+$card = new CreditCard(47246193294648, 2022, 100);
 $customer = new Customer('Laura', 'Bigoni', 22, $card, true);
+// var_dump($customer->getDiscount());
 
-var_dump($card);
+
 var_dump($customer);
-
-var_dump($cuccia->getMaterials());
-
-
-echo $customer->getDiscount();
-echo $customer->buyProduct();
+var_dump($card);
+var_dump($customer->buyProduct($scatolette));
 ?>
 
 <!DOCTYPE html>

@@ -61,11 +61,17 @@ class Customer
     }
 
 
-    public function buyProduct()
+    public function buyProduct($product)
     {
         if ($this->credit_card->expire < date('Y')) {
-            return 'Carta di credito scaduta';
+            return 'Carta di credito scaduta.';
+        } else {
+            if ($product->price > $this->credit_card->balance) {
+                return 'Transazione Rifiutata.';
+            } else {
+                $this->credit_card->balance -= $product->price;
+                return 'Transazione approvata. ' . 'Hai pagato: ' . $product->price . ' €';
+            }
         }
-        return 'Transazione approvata';
     }
 }
