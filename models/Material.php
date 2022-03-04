@@ -5,9 +5,9 @@ class Material extends Product
 {
     public $materials;
 
-    public function __construct($name, $price, $description, $details, $valutation, $materials, $disposability)
+    public function __construct($name, $price, $description, $materials, $disposability)
     {
-        parent::__construct($name, $price, $description, $details, $valutation, $disposability);
+        parent::__construct($name, $price, $description, $disposability);
         $this->materials = $this->getMaterials($materials);
     }
 
@@ -17,5 +17,11 @@ class Material extends Product
             return 'Nessuna informazione disponibile per questo prodotto';
         }
         return 'Lista materiali: ' . $material;
+    }
+    public function setMaterials($materials): self
+    {
+        $this->materials = $materials;
+
+        return $this;
     }
 }

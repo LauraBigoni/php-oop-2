@@ -6,9 +6,9 @@ class Food extends Product
 {
     public $ingredients;
 
-    public function __construct($name, $price, $description, $details, $valutation, $ingredients, $disposability)
+    public function __construct($name, $price, $description, $ingredients, $disposability)
     {
-        parent::__construct($name, $price, $description, $details, $valutation, $disposability);
+        parent::__construct($name, $price, $description, $disposability);
         $this->ingredients = $this->getIngredients($ingredients);
     }
 
@@ -18,5 +18,11 @@ class Food extends Product
             return 'Nessuna informazione disponibile per questo prodotto';
         }
         return 'Lista ingredienti: ' . $ingredient;
+    }
+    public function setIngredients($ingredients): self
+    {
+        $this->ingredients = $ingredients;
+
+        return $this;
     }
 }
