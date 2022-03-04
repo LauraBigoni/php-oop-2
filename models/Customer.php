@@ -66,11 +66,15 @@ class Customer
         if ($this->credit_card->expire < date('Y')) {
             return 'Carta di credito scaduta.';
         } else {
-            if ($product->price > $this->credit_card->balance) {
-                return 'Transazione Rifiutata.';
+            if ($this->discount > 0) {
+                $price = $product->price - $product->price / 100 * $this->discount;
+                $this->credit_card->balance -= $price;
+
+                return "Transazione approvata, hai ricevuto uno sconto del $this->discount% e hai speso " . round($price, 2) . "€";
             } else {
                 $this->credit_card->balance -= $product->price;
-                return 'Transazione approvata. ' . 'Hai pagato: ' . $product->price . ' €';
+
+                return "Transazione approvata, non hai ricevuto nessuno sconto e hai speso " . round($product->price, 2) . "€";
             }
         }
     }

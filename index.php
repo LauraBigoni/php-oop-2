@@ -27,7 +27,7 @@ $customer = new Customer('Laura', 'Bigoni', 22, $card, true);
 
 var_dump($customer);
 var_dump($card);
-var_dump($customer->buyProduct($scatolette));
+var_dump($customer->buyProduct($cuccia));
 ?>
 
 <!DOCTYPE html>
